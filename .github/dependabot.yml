@@ -1,0 +1,24 @@
+version: 2
+updates:
+  # Enable version updates for Github Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      # Check for updates to GitHub Actions once a week
+      interval: "weekly"
+
+  # Enable version updates for npm (JavaScript)
+  - package-ecosystem: "npm"
+    # Look for `package.json` and `lock` files in the `root` directory
+    directory: "/"
+    # Check the npm registry for updates once a week
+    schedule:
+      interval: "weekly"
+
+  # Enable version updates for pip (Python)
+  - package-ecosystem: "pip"
+    # Look for a `requirements.txt` file in the `tests` directory
+    directory: "/tests/"
+    # Check for updates once a week
+    schedule:
+      interval: "weekly"
