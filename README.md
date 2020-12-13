@@ -41,11 +41,22 @@ This extension allows you to:
 * [Release Notes](#release-notes)
 
 ## Installation
-* **(BEST) First option**: to start using this extension with Visual Studio Code download and install the VSIX package from the [latest github release by clicking here](https://github.com/mario33881/vscode-blif/releases/latest) 
+* **(BEST) First option**: You can install this extension on the the Visual Studio Code extension marketplace, 
+(from browser or from VS Code):
+    From VS Code:
+    * Open the extensions marketplace
+    * search for the "BLIF (SIS)" extension by mario33881 (me)
+    * click on the install button
+
+    From the browser:
+    * Click [this link to go to the marketplace](https://marketplace.visualstudio.com/items?itemName=mario33881.vscode-blif)
+    * Click the install button and accept to open the link with Visual Studio Code
+
+* **Second option**: you can also download and install the VSIX package from the [latest github release by clicking here](https://github.com/mario33881/vscode-blif/releases/latest) 
     
     The VSIX package can then be installed from VS Code:
-    * go to the Extension marketplace
-    * click on the three dots ```...``` (position on top of the seach bar)
+    * go to the Extensions marketplace
+    * click on the three dots ```...``` (positioned on top of the seach bar)
     * then click on ```Install from VSIX...```, select the VSIX file and click ```open```
 
     The VSIX package can also be installed from the terminal using the following command:
@@ -55,7 +66,7 @@ This extension allows you to:
     ```
     > Replace ```<file>``` with the correct file name (example ```vscode-blif-v1.0.1.vsix```)
 
-* **Second option**: You can also copy this repository folder into the extensions folder:
+* **Third option**: You can also copy this repository folder into the extensions folder:
 
     * Windows: ```%USERPROFILE%\.vscode\extensions```
     * macOS: ```~/.vscode/extensions```
@@ -63,15 +74,11 @@ This extension allows you to:
 
     and then restart Code.
 
-* **Third option**: download this repository, navigate to this directory via the terminal and execute the following command:
+* **Fourth option**: download this repository, navigate to this directory via the terminal and execute the following command:
 
         npm install && npm run install_ext
     > NPM is required to install the extension using this option
-    
-* (CURRENTLY NOT AVAILABLE) Fourth option: when/If this extension will be published on the Visual Studio Code extension marketstore, 
-you will be able to install it via the extension marketstore (from browser or from VS Code) 
-    > Docs about extension publishing: https://code.visualstudio.com/docs
-    
+
 ## Features
 
 ### Templates
