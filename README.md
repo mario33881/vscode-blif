@@ -50,7 +50,7 @@ This extension allows you to:
     and restart Code.
 * **Second option**: download this repository, navigate to this directory via the terminal and execute the following command:
 
-        npm install && npm run install
+        npm install && npm run install_ext
     > NPM is required to install the extension using this option
 
 * (CURRENTLY NOT AVAILABLE) Third option: the VSIX package could be pushed to a github release.
@@ -152,7 +152,7 @@ to open a new window with the extension loaded.
 
 ## Release Notes
 
-### 1.0.0
+### 1.0.1
 
 Initial release
 

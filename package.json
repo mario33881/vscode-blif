@@ -2,7 +2,7 @@
     "name": "vscode-blif",
     "displayName": "BLIF (SIS)",
     "description": "Highlights and autocompletes .blif (SIS' Berkeley Logic Interchange Format) files",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "author": "mario33881",
     "publisher": "mario33881",
     "engines": {
@@ -61,7 +61,7 @@
     },
     "scripts": {
         "build": "[ ! -e vscode-blif.vsix ] || rm vscode-blif.vsix && vsce package --out vscode-blif.vsix",
-        "install": "npm run build && code --install-extension vscode-blif.vsix",
+        "install_ext": "npm run build && code --install-extension vscode-blif.vsix",
         "deploy": "vsce publish"
     },
     "devDependencies": {
