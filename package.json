@@ -60,7 +60,8 @@
         ]
     },
     "scripts": {
-        "build": "[ ! -e vscode-blif.vsix ] || rm vscode-blif.vsix && vsce package --out vscode-blif.vsix",
+        "prebuild": "[ ! -e vscode-blif.vsix ] || rm vscode-blif.vsix",
+        "build": "vsce package --out vscode-blif.vsix",
         "install_ext": "npm run build && code --install-extension vscode-blif.vsix",
         "deploy": "vsce publish"
     },

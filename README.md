@@ -41,20 +41,8 @@ This extension allows you to:
 * [Release Notes](#release-notes)
 
 ## Installation
-* **(BEST) First option**: to start using this extension with Visual Studio Code copy it into the extensions folder:
-
-    * Windows: ```%USERPROFILE%\.vscode\extensions```
-    * macOS: ```~/.vscode/extensions```
-    * Linux: ```~/.vscode/extensions```
-
-    and restart Code.
-* **Second option**: download this repository, navigate to this directory via the terminal and execute the following command:
-
-        npm install && npm run install_ext
-    > NPM is required to install the extension using this option
-
-* (CURRENTLY NOT AVAILABLE) Third option: the VSIX package could be pushed to a github release.
-
+* **(BEST) First option**: to start using this extension with Visual Studio Code download and install the VSIX package from the [latest github release by clicking here](https://github.com/mario33881/vscode-blif/releases/latest) 
+    
     The VSIX package can then be installed from VS Code:
     * go to the Extension marketplace
     * click on the three dots ```...``` (position on top of the seach bar)
@@ -63,8 +51,23 @@ This extension allows you to:
     The VSIX package can also be installed from the terminal using the following command:
     
     ```
-    code --install-extension <file>.vsix
+    code --install-extension <file>
     ```
+    > Replace ```<file>``` with the correct file name (example ```vscode-blif-v1.0.1.vsix```)
+
+* **Second option**: You can also copy this repository folder into the extensions folder:
+
+    * Windows: ```%USERPROFILE%\.vscode\extensions```
+    * macOS: ```~/.vscode/extensions```
+    * Linux: ```~/.vscode/extensions```
+
+    and then restart Code.
+
+* **Third option**: download this repository, navigate to this directory via the terminal and execute the following command:
+
+        npm install && npm run install_ext
+    > NPM is required to install the extension using this option
+    
 * (CURRENTLY NOT AVAILABLE) Fourth option: when/If this extension will be published on the Visual Studio Code extension marketstore, 
 you will be able to install it via the extension marketstore (from browser or from VS Code) 
     > Docs about extension publishing: https://code.visualstudio.com/docs
