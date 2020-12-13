@@ -23,7 +23,7 @@
         "theme": "dark"
     },
     "license": "MIT",
-    "homepage": "https://github.com/mario33881/vscode-blif/blob/master/README.md",
+    "homepage": "https://github.com/mario33881/vscode-blif",
     "bugs": {
         "url": "https://github.com/mario33881/vscode-blif/issues"
     },
@@ -60,7 +60,7 @@
         ]
     },
     "scripts": {
-        "build": "vsce package --out vscode-blif.vsix",
+        "build": "[ ! -e vscode-blif.vsix ] || rm vscode-blif.vsix && vsce package --out vscode-blif.vsix",
         "install": "npm run build && code --install-extension vscode-blif.vsix",
         "deploy": "vsce publish"
     },

@@ -5,7 +5,9 @@ This is the README for the **BLIF extension** (vscode-blif) for Visual Studio Co
 > 
 > SIS is a tool that optimizes and simulates logic gate and finite state machine networks
 
-![Presentation gif](images/presentation.gif)
+<div style="text-align: center; margin: 25px 0px;">
+    <img style="border: 1px solid white" alt="Presentation gif" src="https://github.com/mario33881/vscode-blif/blob/main/images/presentation.gif?raw=true">
+</div>
 
 This extension allows you to:
 * Start to develop a .blif file from a **template**
@@ -59,9 +61,10 @@ This extension allows you to:
     * then click on ```Install from VSIX...```, select the VSIX file and click ```open```
 
     The VSIX package can also be installed from the terminal using the following command:
-
-        code --install-extension <file>.vsix
-
+    
+    ```
+    code --install-extension <file>.vsix
+    ```
 * (CURRENTLY NOT AVAILABLE) Fourth option: when/If this extension will be published on the Visual Studio Code extension marketstore, 
 you will be able to install it via the extension marketstore (from browser or from VS Code) 
     > Docs about extension publishing: https://code.visualstudio.com/docs
@@ -74,17 +77,23 @@ Templates allow you to develop your .blif file from a basic, common, baseline.
 Currently the included templates are: 
 * ```!fsm```, which is a Finite State Machine template
 
-    ![FSM template](images/templates/fsm_template.gif)
+    <div style="text-align: center; margin: 25px 0px;">
+        <img style="border: 1px solid white" alt="FSM template" src="https://github.com/mario33881/vscode-blif/blob/main/images/templates/fsm_template.gif?raw=true">
+    </div>
 
 * ```!lgate```, which is a Logic Gate template
 
-    ![Logic Gate template](images/templates/lgate_template.gif)
+    <div style="text-align: center; margin: 25px 0px;">
+        <img style="border: 1px solid white" alt="Logic Gate template" src="https://github.com/mario33881/vscode-blif/blob/main/images/templates/lgate_template.gif?raw=true">
+    </div>
 
 ### Keyword autocompletion
 Keyword autocompletion allows you to **write keywords efficiently by completing a keyword** using the tab key:
 * Start writing a keyword, like ```.m```
 
-    ![Autocompletion, .m](images/autocompletion/m.png)
+    <div style="text-align: center; margin: 25px 0px;">
+        <img style="border: 1px solid white" alt="Autocompletion, .m" src="https://github.com/mario33881/vscode-blif/blob/main/images/autocompletion/m.png?raw=true">
+    </div>
 
 * The extension suggests you all the possible options for autocompletion,
 use the arrow keys to hover over an option
@@ -92,7 +101,9 @@ use the arrow keys to hover over an option
 * You can read what the keyword does on the right of the hovered option.
 Select the option by clicking the tab key.
 
-    ![Autocompletion, .model confirmed](images/autocompletion/model_confirmed.png)
+    <div style="text-align: center; margin: 25px 0px;">
+        <img style="border: 1px solid white" alt="Autocompletion, .model confirmed" src="https://github.com/mario33881/vscode-blif/blob/main/images/autocompletion/model_confirmed.png?raw=true">
+    </div>
 
 * If default values follow the keyword, start typing to replace the value and then use the tab key to move to the next default value (if available). 
 
@@ -129,7 +140,9 @@ This extension **highlights keywords** that start with the dot ```.``` and ```.s
 
 Highlighted keywords:
 
-![Syntax Highlighting](images/highlighting/highlighting.png)
+<div style="text-align: center; margin: 25px 0px;">
+    <img style="border: 1px solid white" alt="Syntax Highlighting" src="https://github.com/mario33881/vscode-blif/blob/main/images/highlighting/highlighting.png?raw=true">
+</div>
 
 ## Development
 * Open this repository with visual studio code and then press `F5`
