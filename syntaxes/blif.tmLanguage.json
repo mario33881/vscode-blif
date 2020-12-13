@@ -1,0 +1,112 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "blif",
+	"patterns": [
+		{
+			"include": "#keywords_generic"
+        },
+        {
+			"include": "#keywords_lgate"
+        },
+        {
+			"include": "#keywords_fsm"
+		},
+		{
+			"include": "#comments"
+        },
+        {
+            "include": "#subckt_parameters"
+        }
+	],
+	"repository": {
+		"keywords_generic": {
+			"patterns": [
+                {
+                    "name": "keyword.control.blif",
+                    "match": "^\\.model\\s"
+                },
+                {
+                    "name": "keyword.control.blif",
+                    "match": "^\\.inputs\\s"
+                },
+                {
+                    "name": "keyword.control.blif",
+                    "match": "^\\.outputs\\s"
+                },
+                {
+                    "name": "keyword.control.blif",
+                    "match": "^\\.end\\s"
+                },
+                {
+                    "name": "keyword.control.blif",
+                    "match": "^\\.subckt\\s"
+                },
+                {
+                    "name": "keyword.control.blif",
+                    "match": "^\\.search\\s"
+                }
+            ]
+        },
+        "keywords_lgate": {
+            "patterns": [
+                {
+                    "name": "keyword.control.blif",
+                    "match": "^\\.exdc\\s"
+                },
+                {
+                    "name": "keyword.control.blif",
+                    "match": "^\\.names\\s"
+                }
+            ]
+        },
+        "keywords_fsm": {
+            "patterns": [
+                {
+                    "name": "keyword.control.blif",
+                    "match": "^\\.start_kiss\\s"
+                },
+                {
+                    "name": "keyword.control.blif",
+                    "match": "^\\.i\\s"
+                },
+                {
+                    "name": "keyword.control.blif",
+                    "match": "^\\.o\\s"
+                },
+                {
+                    "name": "keyword.control.blif",
+                    "match": "^\\.s\\s"
+                },
+                {
+                    "name": "keyword.control.blif",
+                    "match": "^\\.p\\s"
+                },
+                {
+                    "name": "keyword.control.blif",
+                    "match": "^\\.r\\s"
+                },
+                {
+                    "name": "keyword.control.blif",
+                    "match": "^\\.end_kiss\\s"
+                },
+                {
+                    "name": "keyword.control.blif",
+                    "match": "^\\.code\\s"
+                },
+                {
+                    "name": "keyword.control.blif",
+                    "match": "^\\.latch\\s"
+                }
+            ]
+        },
+        "comments" : {
+            "name": "comment.line",
+            "match": "#.*"
+        },
+        "subckt_parameters" : {
+            "name": "variable.parameter",
+            "match": "\\s(\\S+)=(\\S+)"
+        }
+	},
+	"scopeName": "source.blif"
+}

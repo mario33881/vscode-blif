@@ -1,0 +1,147 @@
+{
+    "!lgate": {
+        "prefix": ["!lgate"],
+        "body": [
+            ".model ${1:name}",
+            ".inputs ${2:in}",
+            ".outputs ${3:out}",
+            "",
+            "# -- Truth tables -- #",
+            "",
+            "# > Example:",
+            "# > .names a b o # where a and b are inputs, o is an output",
+            "# > 11 1 # where a and b are 1, output is 1",
+            "# > ",
+            "# > ATTENTION (1): only specify minterms (combinations where the output is 1). If you want to use maxterms (output is 0), don't mix minterms and maxterms",
+            "# > ATTENTION (2): .names accepts many inputs but only one output, describe each output with multiple .names",
+            "# > ATTENTION (3): you can use '-' to indicate don't care as an input. You need to use the .exdc keyword to specify don't care outputs",
+            "# > Example:",
+            "# > .names a b o",
+            "# > 11 1",
+            "# > .exdc # the following truth table(s) have don't care as output",
+            "# > .names a b o",
+            "# > 01 1 # when a is 0 and b is 1, the o output is don't care (notice that '1' assumes the meaning of don't care because of .exdc keyword)",
+            ".names ${4:inputs} ${5:output}",
+            "$0",
+            "",
+            ".end"
+        ],
+        "description": "Logic gate template.\n\n"
+    },
+    "!fsm": {
+        "prefix": ["!fsm"],
+        "body": [
+            ".model ${1:name}",
+            ".inputs ${2:in}",
+            ".outputs ${3:out}",
+            "",
+            "# -- FSM Description -- #",
+            ".start_kiss",
+            "",
+            ".i ${4:inputs_number}     # Number of inputs",
+            ".o ${5:outputs_number}    # Number of outputs",
+            ".s ${6:states_number}     # Number of states",
+            ".p ${7:transition_number} # Number of state transitions (2^inputs_number * states_number)",
+            ".r ${8:reset_state_name}  # Name of the reset state",
+            "",
+            "# Transition table",
+            "# > format: inputs current_state new_state outputs",
+            "# > Example:",
+            "# > 01 A B 11 # 01 are two inputs, A is the current state, B is the next state, 11 are two outputs",
+            "$0",
+            ".end_kiss",
+            "",
+            "# -- State encoding -- #",
+            "# Place manually state encoding here (.code)",
+            "# > Execute command ```state_assign jedi``` to automatically encode states",
+            "",
+            ".end"
+        ],
+        "description": "FSM template.\n\n"
+    },
+    ".model": {
+      "prefix": [".model"],
+      "body": [".model ${1:name}", "$0", ".end"],
+      "description": "Define a sub-cell by specifying\nthe name of its model.\n\nExample:\n.model mycircuitsname\n\n"
+    },
+    ".inputs": {
+        "prefix": [".inputs"],
+        "body": [".inputs ${1:in}", "$0"],
+        "description": "Define the name of the input(s).\n\nExample:\n.inputs a b c\n> Where a b c are\nthe names of the inputs.\n\n"
+    },
+    ".outputs": {
+        "prefix": [".outputs"],
+        "body": [".outputs ${1:out}", "$0"],
+        "description": "Define the name of the output(s).\n\nExample:\n.outputs x y z\n> Where x y z are\nthe names of the outputs.\n\n"
+    },
+    ".names": {
+        "prefix": [".names"],
+        "body": [".names ${1:in} ${2:out}", "$0"],
+        "description": "Define a link between inputs\nand an output\n(on a new line write a truth table\nwith only minterms).\n\nExample:\n.names a b o\n> Where a and b are inputs\n> and o is an output.\n\n> ATTENTION: One .names corresponds to\n> one and one only output.\n\n"
+    },
+    ".exdc": {
+        "prefix": [".exdc"],
+        "body": [".exdc", "$0"],
+        "description": "Specifies that the following\ntruth tables have don't care(s)\nas an output.\n\n(each truth table needs\nto be defined using .names)\n\n"
+    },
+    ".start_kiss": {
+        "prefix": [".start_kiss"],
+        "body": [".start_kiss", "$0", ".end_kiss"],
+        "description": "Defines a FSM.\n(.start_kiss has to be\nclosed with .end_kiss)\n\n"
+    },
+    ".end_kiss": {
+        "prefix": [".end_kiss"],
+        "body": [".end_kiss", "$0"],
+        "description": "Closes the definition of an FSM.\n(which has to be defined first\nusing the .start_kiss keyword).\n\n"
+    },
+    ".i": {
+        "prefix": [".i"],
+        "body": [".i ${1:inputs_number} # Number of inputs", "$0"],
+        "description": "Specifies the number of inputs\nof a FSM.\n(needs to be between .start_kiss\nand .end_kiss).\n\nExample:\n.i 3\n> Where 3 is the number\n> of inputs of the FSM.\n\n"
+    },
+    ".o": {
+        "prefix": [".o"],
+        "body": [".o ${1:outputs_number} # Number of outputs", "$0"],
+        "description": "Specifies the number of outputs\nof a FSM.\n(needs to be between .start_kiss\nand .end_kiss).\n\nExample:\n.o 2\n> Where 2 is the number\n> of outputs of the FSM.\n\n"
+    },
+    ".s": {
+        "prefix": [".s"],
+        "body": [".s ${1:states_number} # Number of states", "$0"],
+        "description": "Specifies the number of states of\na FSM.\n(needs to be between .start_kiss\nand .end_kiss).\n\nExample:\n.s 5\n> Where 5 is the number\n> of states of the FSM.\n\n"
+    },
+    ".p": {
+        "prefix": [".p"],
+        "body": [".p ${1:transitions_number} # Number of states transitions (2^inputs_number * states_number)", "$0"],
+        "description": "Specifies the number of\nstates transitions of a FSM.\n(needs to be between\n.start_kiss and .end_kiss).\n\nExample:\n.p 40\n> Where 40 is the number\n> of transitions of the FSM.\n\n"
+    },
+    ".r": {
+        "prefix": [".r"],
+        "body": [".r ${1:reset_state} # Name of the reset state", "$0"],
+        "description": "Specifies the name of the\nreset state of a FSM.\n(needs to be between .start_kiss\nand .end_kiss).\n\nExample:\n.r A\n> Where A is the name\n> of the reset state of the FSM.\n\n"
+    },
+    ".code": {
+        "prefix": [".code"],
+        "body": [".code ${1:state_name} ${2:state_encoding}", "$0"],
+        "description": "Define a state encoding.\n\nExample:\n.code A 010\n> Where A is the name of a state,\n> 010 is the encoding of the state\n\n"
+    },
+    ".subckt": {
+        "prefix": [".subckt"],
+        "body": [".subckt ${1:name} ${2:in_subcell=in_instance} ${3:out_subcell=out_instance}", "$0"],
+        "description": "Initialize an instance\nof a sub-cell model.\n(The sub-cell model could be\ndefined in another file\nand 'imported' using the\n.search keyword)\n\nParameters:\n* (one) name of the sub-cell\n  model to instance\n* (one/many) links between sub-cell\n  model inputs and .inputs inputs\n  (format: 'a=in1 b=in2 ...')\n* (one/many) links between sub-cell\n  model outputs and .outputs outputs\n  (format: 'x=out1 y=out2 ...').\n\n"
+    },
+    ".search": {
+        "prefix": [".search"],
+        "body": [".search ${1:filename.blif}", "$0"],
+        "description": "Searches (imports) sub-cell models\ndefined in another .blif file.\n(.subckt can then be used to\ninitialize the sub-cell models)\n\nParameters:\n* (one) name of the sub-cell\n  model to instance\n* (one/many) links between sub-cell\n  model inputs and .inputs inputs\n  (format: 'a=in1 b=in2 ...')\n* (one/many) links between sub-cell\n  model outputs and .outputs outputs\n  (format: 'x=out1 y=out2 ...').\n\n"
+    },
+    ".latch": {
+        "prefix": [".latch"],
+        "body": [".latch ${1:props}", "$0"],
+        "description": "Defines a latch.\n\n"
+    },
+    ".end": {
+        "prefix": [".end"],
+        "body": [".end", "$0"],
+        "description": "Closes the definition of\na sub-cell model.\n\nExample:\n.model mycircuitsname\n# ...\n.end\n\n"
+    }
+}

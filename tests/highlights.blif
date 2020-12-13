@@ -1,0 +1,17 @@
+.model mycircuit
+.inputs START IN1 IN0
+.outputs OUT
+.names a b o
+.search filename.blif
+.subckt name in_subcell=in_instance out_subcell=out_instance
+# Comment
+.latch
+.start_kiss # comment next to keyword
+.i 3
+.o 1
+.s 5
+.p 15
+.r ATT
+.end_kiss
+.code ATT 000
+.end

@@ -1,0 +1,21 @@
+{
+    // comments
+    "comments": {
+        "lineComment": "#" // symbol used for single line comment.
+    },
+    // symbols that are auto closed when typing
+    "autoClosingPairs": [
+        [".start_kiss", "\n\n.end_kiss"] // FSM description
+    ],
+    // symbols that can be used to surround a selection
+    "surroundingPairs": [
+        [".start_kiss", "\n.end_kiss"] // FSM description
+    ],
+    // hide portion of code (when requested by the dev)
+    "folding": {
+        "markers": {
+          "start": "\\.start_kiss",
+          "end": "\\.end_kiss"
+        }
+    }
+}

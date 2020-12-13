@@ -1,0 +1,3 @@
+node_modules
+*.vsix
+tests/__pycache__

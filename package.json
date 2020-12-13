@@ -1,0 +1,70 @@
+{
+    "name": "vscode-blif",
+    "displayName": "BLIF (SIS)",
+    "description": "Highlights and autocompletes .blif (SIS' Berkeley Logic Interchange Format) files",
+    "version": "1.0.0",
+    "author": "mario33881",
+    "publisher": "mario33881",
+    "engines": {
+        "vscode": "^1.51.0"
+    },
+    "categories": [
+        "Programming Languages",
+        "Snippets"
+    ],
+    "keywords": [
+        "BLIF",
+        "SIS",
+        "Berkeley Logic Interchange Format"
+    ],
+    "icon": "images/icon.png",
+    "galleryBanner": {
+        "color": "#A62639",
+        "theme": "dark"
+    },
+    "license": "MIT",
+    "homepage": "https://github.com/mario33881/vscode-blif/blob/master/README.md",
+    "bugs": {
+        "url": "https://github.com/mario33881/vscode-blif/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/mario33881/vscode-blif.git"
+    },
+    "contributes": {
+        "languages": [
+            {
+                "id": "blif",
+                "aliases": [
+                    "blif",
+                    "blif"
+                ],
+                "extensions": [
+                    ".blif"
+                ],
+                "configuration": "./languages/blif.language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "blif",
+                "scopeName": "source.blif",
+                "path": "./syntaxes/blif.tmLanguage.json"
+            }
+        ],
+        "snippets": [
+            {
+                "language": "blif",
+                "path": "./snippets/blif.snippets.json"
+            }
+        ]
+    },
+    "scripts": {
+        "build": "vsce package --out vscode-blif.vsix",
+        "install": "npm run build && code --install-extension vscode-blif.vsix",
+        "deploy": "vsce publish"
+    },
+    "devDependencies": {
+        "vsce": "^1.81.1"
+    }
+}
