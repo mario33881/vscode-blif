@@ -6,6 +6,10 @@ updates:
     schedule:
       # Check for updates to GitHub Actions once a week
       interval: "weekly"
+    # Ignore version v2.1.3, its a `Beta` version
+    ignore:
+    - dependency-name: actions/setup-node*
+      versions: ["2.1.x"]
 
   # Enable version updates for npm (JavaScript)
   - package-ecosystem: "npm"
@@ -22,3 +26,7 @@ updates:
     # Check for updates once a week
     schedule:
       interval: "weekly"
+    # Ignore updates for pywin32 (DLL error during import)
+    ignore:
+    - dependency-name: pywin32*
+      versions: ["<=300"]
