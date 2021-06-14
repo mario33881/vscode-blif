@@ -1,4 +1,4 @@
 PyAutoGUI==0.9.52
 keyboard==0.13.5
 pywin32==301; sys_platform == 'win32' or sys_platform == 'cygwin' or sys_platform == 'msys'
-pyobjc==7.2; sys_platform == 'darwin' or sys_platform == 'os2' or sys_platform == 'os2emx'
+pyobjc==7.3; sys_platform == 'darwin' or sys_platform == 'os2' or sys_platform == 'os2emx'
