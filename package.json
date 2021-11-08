@@ -66,6 +66,6 @@
         "deploy": "vsce publish"
     },
     "devDependencies": {
-        "vsce": "^1.100.2"
+        "vsce": "^2.2.0"
     }
 }
